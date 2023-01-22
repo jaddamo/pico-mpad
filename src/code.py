@@ -19,11 +19,10 @@ def send_keys(button_number):
                 keyboard.press(*key[1])
             elif key[0] == km.CONTROL_CODE:
                 cc.press(key[1])
-        else:
-            if key[0] == km.KEY:
-                keyboard.release(*key[1])
-            elif key[0] == km.CONTROL_CODE:
-                cc.release()
+        elif key[0] == km.KEY:
+            keyboard.release(*key[1])
+        elif key[0] == km.CONTROL_CODE:
+            cc.release()
     except ValueError:
         pass
 
